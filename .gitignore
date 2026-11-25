@@ -1,0 +1,57 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*~
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.lic
+license.dat
+
+# External process kits, technology libraries, and Cadence workspaces
+gpdk*/
+PDK/
+pdk/
+tech.db
+cds.lib
+lib.defs
+cdsinfo.tag
+*.oa
+*.cdslck
+*.cdslck.*
+.cadence/
+
+# Raw simulator output and logs
+simulation/
+psf/
+psf*/
+*.raw
+*.log
+
+# VM and backup archives
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.ova
+*.ovf
+*.iso
+*.zip
+*.tar
+*.gz
+*.7z
+
+# Generated analysis and document build files
+__pycache__/
+*.pyc
+node_modules/
+*.aux
+*.out
+*.synctex.gz
