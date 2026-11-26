@@ -25,11 +25,26 @@ The circuit follows an eight-transistor, two-stage architecture:
 
 The circuit was designed and evaluated in Cadence Virtuoso with Spectre and the gpdk045 design kit. The amplifier supply is 1.1 V, and the specified output load is 1 pF.
 
+## Signal flow
+
+```mermaid
+flowchart LR
+    Bridge["Strain-gauge bridge"] -->|"Two midpoint voltages"| Input["Differential input stage"]
+    Input --> Gain["Second gain stage"]
+    Gain --> Output["Analog output voltage"]
+    Bias["Bias current mirror"] -.-> Input
+    Bias -.-> Gain
+```
+
+The bridge produces two nearly equal midpoint voltages. The differential input stage responds to the small difference between them, and the second stage provides further amplification. The bias current mirror sets the operating currents for both stages.
+
+This signal path connects the sensor application to the amplifier architecture. The following updates will examine each circuit block and the simulations used to evaluate it.
+
 ## What this repository will document
 
 The documentation will explain the device-sizing choices, standalone block tests, changes from the baseline circuit, complete-amplifier measurements, and the bridge demonstration. It will connect the saved simulation evidence to the reasoning behind each design choice.
 
-The original circuit study is complete. We are organizing and publishing its documentation incrementally. This initial update introduces the application and architecture; diagrams, selected results, analysis, and the report will follow.
+The original circuit study is complete. We are organizing and publishing its documentation incrementally. The updates so far introduce the application, architecture and signal flow. Circuit-block studies, selected results, analysis and the report will follow.
 
 ## Scope and dependencies
 
